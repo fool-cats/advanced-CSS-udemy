@@ -1,0 +1,21 @@
+/* reset default values*/
+/*  all of the elements and pseudo elements with after and before will be reset */
+*,
+*::after,
+*::before {
+    /* because different broswers have different default values*/
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* 10/16 = 0.625 */
+    font-size: .625;
+}
+
+/* Use CSS inheritance for child elements*/
+body {
+     /* border and padding no longer added to the total width and total height*/
+     box-sizing: border-box;
+}

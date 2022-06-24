@@ -1,0 +1,45 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right,rgba($color-dark, 0.126),rgba($color-primary-light-blue, 0.805)), url("../img/bg.jpg");
+    /* cover image*/
+    background-size: cover;
+    /* always stay at the top of the container*/
+    background-position: top;
+    position: relative;
+    border: $color-primary-light-blue solid 5px;
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+    /* box-shadow: 5px 10px; */
+    box-shadow: 10px 10px 5px $color-primary ;
+
+    // the & like the reference in c language */
+    &__logo-box {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    &__logo {
+        height: 2rem;
+    }
+
+    &__text-box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 85vh;
+    }
+}
+
+// .header__logo-box {
+//     position: absolute;
+//     top: 2rem;
+//     left: 2rem;
+// }
+
+// .header__logo {
+//     height: 2rem;
+//     /* we just need to set the height, the width will automatically  */
+//     /* width: ; */
+// }
+

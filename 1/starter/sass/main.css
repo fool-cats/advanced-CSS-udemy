@@ -1,0 +1,422 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+light blue: #ADD8E6
+
+*/
+/* reset default values*/
+/*  all of the elements and pseudo elements with after and before will be reset */
+*,
+*::after,
+*::before {
+  /* because different broswers have different default values*/
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* 10/16 = 0.625 */
+  font-size: 0.625;
+}
+
+/* Use CSS inheritance for child elements*/
+body {
+  /* border and padding no longer added to the total width and total height*/
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@-webkit-keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* display: flex; */
+  /* no shaking animation */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 3rem;
+  text-shadow: 5px 20px 8px #005b96;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 2rem;
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  /* animation-delay: 3s; */
+}
+.heading-primary--sub {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  -webkit-animation-name: moveInRight;
+          animation-name: moveInRight;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #6497b1, #005b96, #40E0D0);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skewY(2deg) skewX(2deg) scale(1.1);
+  text-shadow: 5px 10px 20px rgba(0, 91, 150, 0.2);
+}
+
+.heading-tertiary {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1rem;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  /* padding will not be inheritance */
+  padding: 1.5rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 2.5rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 6rem;
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 16rem 0;
+  margin-top: -20vh;
+}
+
+.section-features {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.326), rgba(173, 216, 230, 0.85)), url("../img/hutao.jpg");
+  background-size: cover;
+  margin-top: -5.5rem;
+  transform: skewY(-7deg);
+}
+.section-features > * {
+  transform: skewY(7deg);
+}
+
+.section-tours {
+  background-color: rgba(173, 216, 230, 0.85);
+  padding: 14rem 0 25rem 0;
+  margin-top: -5.5rem;
+}
+
+.btn {
+  /* when we click the element this effect will work */
+}
+.btn:link, .btn:visited {
+  margin-top: 5rem;
+  display: block;
+  color: #777;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 1rem;
+  display: inline-block;
+  position: relative;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  /* transform: scale(1.3); */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn:hover::after {
+  transform: scale(1.5);
+  /* flash background color effect */
+  opacity: 0;
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* combine transition with scale will ease scale */
+  transition: all 0.5s;
+}
+.btn--white {
+  background-color: #fff;
+  border-radius: 100px;
+}
+.btn--white::after {
+  background-color: #fff;
+}
+
+.btn-text:link,
+.btn-text :visited {
+  font-size: 1.2rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #40E0D0;
+  padding: 3px;
+  transition: all 0.3s;
+}
+.btn-text:hover {
+  background-color: #ADD8E6;
+  color: #005b96;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+}
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 65%;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.3s;
+  outline-offset: 1rem;
+}
+.composition__photo--p1 {
+  left: 0;
+  top: -1rem;
+}
+.composition__photo--p2 {
+  right: 0;
+  top: 1.5rem;
+}
+.composition__photo--p3 {
+  left: 20%;
+  top: 5rem;
+}
+.composition__photo:hover {
+  outline: 0.5rem solid #40E0D0;
+  transform: scale(1.1) translateY(-0.2rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.9);
+}
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 10px 12px 10px #F6C6EA;
+  transition: all 0.3s;
+}
+.feature-box__icon {
+  font-size: 3rem;
+  background-image: linear-gradient(to right, #F6C6EA, #FF7396);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 0.2rem;
+}
+.feature-box:hover {
+  transform: scale(1.03) translateY(-10px);
+}
+.card {
+  perspective: 75rem;
+  -moz-perspective: 75rem;
+  position: relative;
+  height: 25rem;
+}
+.card__side {
+  background-color: #40E0D0;
+  color: aliceblue;
+  height: 25rem;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+.card__side--front {
+  background-color: #fff;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+}
+.card__side--back-1 {
+  background: linear-gradient(to right bottom, #C9CCD5, #93B5C6);
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0);
+}
+.card__picture {
+  background-image: url(../../img/);
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.126), rgba(173, 216, 230, 0.805)), url("../img/bg.jpg");
+  /* cover image*/
+  background-size: cover;
+  /* always stay at the top of the container*/
+  background-position: top;
+  position: relative;
+  border: #ADD8E6 solid 5px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* box-shadow: 5px 10px; */
+  box-shadow: 10px 10px 5px #55c57a;
+}
+.header__logo-box {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+.header__logo {
+  height: 2rem;
+}
+.header__text-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 85vh;
+}
+
+.row {
+  max-width: 65rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^=col-] {
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 3rem;
+}
+.row .col-1-of-2 {
+  width: calc((100% - 3rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 3rem) / 3);
+}
+.row .col-2-of-3 {
+  width: calc(2 * ((100% - 2 * 3rem) / 3) + 3rem);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 3rem) / 4);
+}
+.row .col-2-of-4 {
+  width: calc(2 * ((100% - 3 * 3rem) / 4) + 3rem);
+}
+.row .col-3-of-4 {
+  width: calc(3 * ((100% - 3 * 3rem) / 4) + 2 * 3rem);
+}/*# sourceMappingURL=main.css.map */

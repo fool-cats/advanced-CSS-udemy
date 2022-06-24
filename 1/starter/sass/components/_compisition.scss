@@ -1,0 +1,38 @@
+.composition {
+    position: relative;
+    &__photo {
+        width: 65%;
+        box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: .4);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        transition: all 0.3s;
+        outline-offset: 1rem;
+        &--p1 {
+            left: 0;
+            top: -1rem;
+        }
+
+        &--p2 {
+            right: 0;
+            top: 1.5rem;
+        }
+
+        &--p3 {
+            left: 20%;
+            top: 5rem;
+        }
+  
+        &:hover {
+            outline: 0.5rem solid $color-primary-light-green-1 ;
+            transform: scale(1.1) translateY(-.2rem);
+            box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: .4);
+            z-index: 20;
+        }
+    }
+   
+    // select the direct child elements which are not hover state
+    &:hover &__photo:not(:hover) {
+        transform: scale(0.9);
+    }
+}

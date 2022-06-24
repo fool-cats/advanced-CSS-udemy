@@ -1,0 +1,24 @@
+.feature-box {
+    background-color: rgba($color-white, $alpha: 0.8);
+    font-size: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 10px 12px 10px $color-primary-pink-1;
+    transition: all 0.3s;
+    &__icon {
+        font-size: 3rem;
+        background-image: linear-gradient(to right, $color-primary-pink-1, $color-primary-pink-2 );
+        // clip the background except text.
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: .2rem;
+    }
+
+    &:hover {
+        transform: scale(1.03) translateY(-10px);
+    }
+    &__text {
+
+    }
+}
